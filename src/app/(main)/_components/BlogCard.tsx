@@ -1,6 +1,6 @@
 import { CategoryItems } from '@/contansts';
 import { Post } from '@/types';
-import { BookOpen } from 'lucide-react';  // Chỉ sử dụng icon từ lucide-react
+import { BookOpen } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -29,8 +29,8 @@ const BlogCard = ({ post }: BlogCardProps) => {
                     {post?.createdAt.toLocaleString()}
                 </p>
 
-                <h2 className="flex text-center items-center gap-2 p-1 bg-primary/10 text-primary text-sm rounded">
-                    <BookOpen size={20} />  {/* Sử dụng icon trực tiếp */}
+                <h2 className="flex text-center items-center gap-2 p-1 bg-stone-900/10 text-stone-900 text-sm rounded">
+                    <BookOpen size={20} />
                     {CategoryItems.find((item) => item.value === post?.category)?.label}
                 </h2>
 

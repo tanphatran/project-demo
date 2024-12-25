@@ -3,7 +3,7 @@
 import { Post } from '@/types';
 import React, { useState, useEffect } from 'react';
 import BlogCard from './BlogCard';
-// import CategoryList from './CategoryList';
+import CategoryList from './CategoryList';
 import Link from 'next/link';
 import { Ellipsis } from 'lucide-react';
 // import CustomLoader from '@/components/CustomLoader';
@@ -17,7 +17,7 @@ const BlogSection = () => {
             title: 'Sample Blog Post 1',
             slug: 'sample-blog-post-1',
             description: 'This is a description of the blog post.',
-            category: 'Tech',
+            category: 'it',
             tags: 'React, Next.js',
             thumbnail: 'https://via.placeholder.com/300x200?text=Thumbnail+1', // Link thay thế ảnh
             content: 'Full content of the post goes here...',
@@ -34,7 +34,7 @@ const BlogSection = () => {
             title: 'Sample Blog Post 2',
             slug: 'sample-blog-post-2',
             description: 'This is a description of the second blog post.',
-            category: 'Design',
+            category: 'it',
             tags: 'UI, UX',
             thumbnail: 'https://via.placeholder.com/300x200?text=Thumbnail+2', // Link thay thế ảnh
             content: 'Full content of the second post goes here...',
@@ -51,7 +51,7 @@ const BlogSection = () => {
             title: 'Sample Blog Post 3',
             slug: 'sample-blog-post-3',
             description: 'This is a description of the third blog post.',
-            category: 'Marketing',
+            category: 'finance',
             tags: 'SEO, Content Strategy',
             thumbnail: 'https://via.placeholder.com/300x200?text=Thumbnail+3', // Link thay thế ảnh
             content: 'Full content of the third post goes here...',
@@ -68,7 +68,7 @@ const BlogSection = () => {
             title: 'Sample Blog Post 4',
             slug: 'sample-blog-post-4',
             description: 'This is a description of the fourth blog post.',
-            category: 'Health',
+            category: 'accounting',
             tags: 'Fitness, Nutrition',
             thumbnail: 'https://via.placeholder.com/300x200?text=Thumbnail+4', // Link thay thế ảnh
             content: 'Full content of the fourth post goes here...',
@@ -92,11 +92,11 @@ const BlogSection = () => {
     return (
         <div className="">
             {/* Thông tin */}
-            <div className="flex flex-col gap-10 md:flex-row justify-between">
-                {/* <CategoryList cat="" /> */}
+            <div className="flex flex-col gap-10 md:flex-row justify-between mt-4">
+                <CategoryList cat="" />
                 <Link
                     href={`/blog`}
-                    className="flex items-center justify-center bg-myPrimaryBlue hover:opacity-70 text-white p-3 rounded-lg max-h-14"
+                    className="flex items-center justify-center bg-blue-400 hover:opacity-70 text-white p-3 rounded-lg max-h-14"
                 >
                     <p className="mr-2">Xem thêm</p>
                     <Ellipsis size={30} />
