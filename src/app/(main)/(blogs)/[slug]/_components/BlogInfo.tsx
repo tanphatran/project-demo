@@ -1,6 +1,6 @@
 import BreadCrumb from '@/components/BreadCrumb';
 import { Badge } from '@/components/ui/badge';
-import { CategoryItems, TagsItems } from '@/contansts';
+import { CategoryItems } from '@/contansts';
 import { Post } from '@/types';
 
 interface BlogInfoProps {

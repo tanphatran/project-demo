@@ -1,7 +1,7 @@
 'use client';
 
 import { Post } from '@/types';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import BlogCard from './BlogCard';
 import CategoryList from './CategoryList';
 import Link from 'next/link';
@@ -84,7 +84,6 @@ const BlogSection = () => {
 
 
     const [BlogList, setBlogList] = useState<Post[]>(mockPosts); // Đặt dữ liệu mẫu làm state ban đầu
-    const [loading, setLoading] = useState(false);
 
     // Chỉ hiển thị 8 bài viết đầu tiên
     const displayBlogList = BlogList.slice(0, 8);
@@ -111,7 +110,6 @@ const BlogSection = () => {
                 ))}
             </div>
 
-            {/* <CustomLoader isLoading={loading} title="Vui lòng chờ" /> */}
         </div>
     );
 };
