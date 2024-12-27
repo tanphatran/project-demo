@@ -83,7 +83,7 @@ const BlogSection = () => {
     ];
 
 
-    const [BlogList, setBlogList] = useState<Post[]>(mockPosts); // Đặt dữ liệu mẫu làm state ban đầu
+    const [BlogList] = useState<Post[]>(mockPosts); // Đặt dữ liệu mẫu làm state ban đầu
 
     // Chỉ hiển thị 8 bài viết đầu tiên
     const displayBlogList = BlogList.slice(0, 8);

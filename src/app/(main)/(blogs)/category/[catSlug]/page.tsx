@@ -15,7 +15,6 @@ const BlogByCatPage = (props: { params: Params; searchParams: SearchParams }) =>
     const searchParams = React.use(props.searchParams);
 
     const [blogs, setBlogs] = useState<Post[]>([]);
-    const [loading, setLoading] = useState(false);
 
     const router = useRouter();
 
@@ -23,7 +22,6 @@ const BlogByCatPage = (props: { params: Params; searchParams: SearchParams }) =>
     const currentTag = searchParams?.tag || '';
 
     useEffect(() => {
-        setLoading(true);
         const getPosts = () => {
             if (!catSlug) {
                 router.push('/');
@@ -40,7 +38,6 @@ const BlogByCatPage = (props: { params: Params; searchParams: SearchParams }) =>
         };
 
         getPosts();
-        setLoading(false);
     }, [catSlug, currentTag, router]);
 
     return (
