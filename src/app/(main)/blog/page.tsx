@@ -14,7 +14,6 @@ const BlogPage = (props: { searchParams: SearchParams }) => {
     const currentPage = Number(searchParams?.page) || 1;
 
     const [posts, setPosts] = useState<Post[]>([]);
-    const [loading, setLoading] = useState(false);
 
     const totalPages = Math.ceil(posts.length / POST_PER_PAGE);
 
@@ -24,11 +23,9 @@ const BlogPage = (props: { searchParams: SearchParams }) => {
     );
 
     useEffect(() => {
-        setLoading(true);
         const getPosts = () => {
             const publishedPosts = mockPosts.filter((post) => post.status === 'publish');
             setPosts(publishedPosts);
-            setLoading(false);
         };
         getPosts();
     }, []);

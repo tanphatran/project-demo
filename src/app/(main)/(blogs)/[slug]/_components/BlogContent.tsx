@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Post } from '@/types';
 
 interface BlogContentProps {
@@ -12,10 +13,13 @@ const BlogContent = ({ blog }: BlogContentProps) => {
             {/* Thumbnail */}
             {blog.thumbnail && (
                 <div className="mb-6">
-                    <img
+                    <Image
                         src={blog.thumbnail}
                         alt={blog.title}
                         className="w-full rounded-lg object-cover"
+                        width={1200}
+                        height={600}
+
                     />
                 </div>
             )}
@@ -30,8 +34,16 @@ const BlogContent = ({ blog }: BlogContentProps) => {
                     <span className="font-semibold">{blog.userName}</span> on{' '}
                     {new Date(blog.createdAt).toLocaleDateString()}
                 </p>
-                <p>Category: <span className="font-semibold">{blog.category}</span></p>
-                <p>Tags: <span className="font-semibold">{blog.tags}</span></p>
+                <p>
+                    Category: <span className="font-semibold">{blog.category}</span>
+                </p>
+                <p>
+                    Tags: <span className="font-semibold">
+                        {Array.isArray(blog.tags)
+                            ? blog.tags.join(', ')
+                            : blog.tags || 'No tags'}
+                    </span>
+                </p>
             </div>
 
             {/* Description */}
