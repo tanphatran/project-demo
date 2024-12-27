@@ -8,14 +8,14 @@ interface BlogInfoProps {
 }
 
 const BlogInfo = ({ blog }: BlogInfoProps) => {
-    let color = 'bg-myPrimaryBlue';
+    let color = 'bg-blue-400';
 
     if (blog?.category === 'finance') {
-        color = 'bg-myPrimaryGreen';
+        color = 'bg-green-400';
     } else if (blog?.category === 'it') {
-        color = 'bg-myPrimaryYellow';
+        color = 'bg-yellow-400';
     } else {
-        color = 'bg-myPrimaryBlue';
+        color = 'bg-blue-400';
     }
 
     return (
@@ -40,11 +40,7 @@ const BlogInfo = ({ blog }: BlogInfoProps) => {
                 >
                     {CategoryItems.find((item) => item.value === blog?.category)?.label}
                 </Badge>
-                <Badge
-                    className={`${color} text-white min-w-20 min-h-4 p-1 items-center justify-center`}
-                >
-                    {TagsItems.find((item) => item.value === blog?.tags)?.label}
-                </Badge>
+
             </div>
             <h1 className="text-4xl font-bold m-16 text-center">{blog?.title}</h1>
         </div>

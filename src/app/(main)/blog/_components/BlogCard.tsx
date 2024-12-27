@@ -27,7 +27,7 @@ const BlogCard = ({ post }: BlogCardProps) => {
                     <span className="text-gray-500 mr-3">
                         {post?.createdAt.toLocaleDateString()}
                     </span>
-                    <span className="text-myPrimaryBlue font-bold">
+                    <span className="text-blue-400 font-bold">
                         {CategoryItems.find((item) => item.value === post?.category)?.label}
                     </span>
                 </div>
